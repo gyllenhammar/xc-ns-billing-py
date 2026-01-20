@@ -1,0 +1,6 @@
+requests
+python-dateutil
+python-dotenv
+pandas
+matplotlib
+reportlab
