@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Proof of Concept](https://img.shields.io/badge/Type-Proof%20of%20Concept-informational.svg)]()
 
-A sophisticated billing report generator for F5 Distributed Cloud (XC) that demonstrates how to use the XC API to calculate per-namespace and per-cost-center costs based on HTTP requests, WAF metrics, and feature inventory.
+A billing report generator for F5 Distributed Cloud (XC) that demonstrates how to use the XC API to calculate per-namespace and per-cost-center costs based on HTTP requests, WAF metrics, and feature inventory.
 
 ## ⚠️ Disclaimer
 
@@ -66,6 +66,7 @@ PRICE_PER_BOT_PROTECTION_LB=150.0
 
 # Optional: Output folder (default: ./billing_reports)
 F5XC_OUTPUT_FOLDER=./billing_reports
+```
 
 ### 3. Validate Setup
 
@@ -156,13 +157,6 @@ python main.py --cost-center "Engineering" --pdf
 - Stacked bar chart: Cost breakdown by type (HTTP, WAF, LB features, etc.)
 - Summary table: All cost centers with totals
 
-**Technical Details:**
-- Pure Python implementation using matplotlib and ReportLab
-- No browser or external dependencies required
-- Fully portable (Windows, macOS, Linux)
-- Charts generated as high-resolution PNG (150 DPI)
-- Professional styling with multi-page layout
-
 ## Configuration
 
 ### Environment Variables
@@ -191,6 +185,8 @@ Namespaces map to cost centers via tags in the namespace description using a con
                                       ↓
 Namespace: prod-acme  →  Cost Center: Acme Corp
 ```
+
+![Namespace description tag example](/img/acme-ns-tag.png)
 
 **Tag format:** `{{key:value}}` where:
 - `key`: Configurable via `F5XC_COST_CENTER_TAG_KEY` env variable (default: `cost_center`)
